@@ -1,0 +1,99 @@
+---
+import Header from '../components/Header.astro';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="min-h-screen bg-gradient-to-tr from-slate-800 via-gray-900 to-zinc-900">
+    <Header />
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+  @font-face {
+    font-family: 'WorkSans';
+    src: url('../../fonts/DMSans-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'WorkSans';
+    src: url('../../fonts/DMSans-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'WorkSans';
+    src: url('../../fonts/DMSans-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'WorkSans';
+    src: url('../../fonts/DMSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'WorkSans';
+    src: url('../../fonts/DMSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'WorkSans';
+    src: url('../../fonts/DMSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'WorkSans';
+    src: url('../../fonts/DMSans-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'WorkSans';
+    src: url('../../fonts/DMSans-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  .hero-dark-bg {
+    background: hsla(216, 100%, 4%, 1);
+    background: radial-gradient(circle, hsla(216, 100%, 4%, 1) 0%, hsla(211, 100%, 12%, 1) 100%);
+    background: -moz-radial-gradient(circle, hsla(216, 100%, 4%, 1) 0%, hsla(211, 100%, 12%, 1) 100%);
+    background: -webkit-radial-gradient(circle, hsla(216, 100%, 4%, 1) 0%, hsla(211, 100%, 12%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#000814", endColorstr="#001D3D", GradientType=1 );
+  }
+</style>
