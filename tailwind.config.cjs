@@ -8,11 +8,10 @@ module.exports = {
       },
       colors: {
         primary: "#FFD60A",
-        secondary: "#058C42",
-        bgDark: "#020202",
-        bgDarkSeconday: "#0D2818",
+        bgDark: "#00172F",
+        bgDarkSeconday: "#00264B",
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animated")],
 };

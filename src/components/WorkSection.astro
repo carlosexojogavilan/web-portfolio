@@ -1,0 +1,33 @@
+---
+import WorkCard from "./WorkCard.astro"
+
+const cardInfo = [
+  {
+    title: "Calculator App",
+    description: "Simple calculator app made with React."
+  },
+  {
+    title: "Higher or Lower Game",
+    description: "Based in the famous game using React and RapidApi."
+  },
+  {
+    title: "Job Finder App",
+    description: "React Native app where you can find jobs via keywords."
+  },
+  {
+    title: "Personal portfolio",
+    description: "Web made using Astro as the main technology."
+  }
+]
+---
+
+<section class="p-20 bg-[#00264B] scroll-mt-20" id="work">
+  <h2 class="inline text-white text-2xl font-bold tracking-tighter">My Work</h2>
+  <p class="inline text-3xl text-primary font-bold">.</p>
+  <div class="flex flex-wrap gap-12 mt-12 justify-center">
+    {cardInfo.map(card => {
+      return <WorkCard cardTitle={card.title} description={card.description} />
+    })}
+  </div>
+</section>
+

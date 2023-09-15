@@ -1,0 +1,24 @@
+---
+const {cardTitle, description} = Astro.props;
+---
+
+
+<div class="border-[1px] border-primary rounded-xl overflow-hidden max-w-xs bg-[#001F3D]">
+  <img src="../../src/assets/images/roberto-nickson-hLgYtX0rPgw-unsplash.jpg" class="object-cover h-60 w-80">
+  <div class="p-5 flex flex-col gap-5 border-t-2 border-primary">
+    <div class="flex flex-col gap-1">
+      <h3 class="text-primary text-2xl font-bold tracking-tight">{cardTitle}</h3>
+      <p class="text-gray-200">{description}</p>
+    </div>
+    <div class="flex gap-4 font-medium">
+      <a class="bg-primary font-light py-2 px-4 rounded-xl border-2 border-[#FFC300] flex items-center gap-2">
+        Repo
+        <img src="../../src/assets/icons/github-icon.svg">
+      </a>
+      <a class="bg-primary font-light py-2 px-4 rounded-xl border-2 border-[#FFC300] flex items-center gap-2">
+        Demo
+        <img src="../../src/assets/icons/redirect-icon.svg">
+      </a>
+    </div>
+  </div>
+</div>
