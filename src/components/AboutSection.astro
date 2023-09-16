@@ -1,20 +1,13 @@
 ---
-
-import AboutWorkCard from "./AboutWorkCard.astro";
-import Studies from "./Studies.astro"
 import WorkingExperiences from "./WorkingExperiences.astro"
+import Studies from "./Studies.astro"
 import TechStack from "./TechStack.astro";
-
-
-/*
-  Cosas a refactorizar:
-    - p-20 del primer div hacer que solo sea necesario en el padre de todas las secciones
-*/
 ---
-<section class="bg-[#00172F] p-20 scroll-mt-20" id="about">
-  <h2 class="inline text-white text-2xl font-bold tracking-tighter">About</h2>
-  <p class="inline text-3xl text-primary font-bold">.</p>
-  <p class="text-gray-200 mt-2">Howdy! My name is Carlos Exojo, a 22-year-old technology enthusiast from Barcelona. Recently, I graduated in Computer Engineering at UPC, where I specialized in software engineering and since then, I've been focused on the exciting world of web development. I am constantly exploring new technologies, with the goal of growing and evolving as a professional day by day. Welcome to my portfolio.</p>
+
+<section id="about" class="section bg-bgDark">
+  <h2 class="sectionTitle">About</h2>
+  <p class="accent text-3xl">.</p>
+  <p class="text-gray-200 mt-2 md:text-lg">Howdy! My name is Carlos Exojo, a 22-year-old technology enthusiast from Barcelona. Recently, I graduated in Computer Engineering at UPC, where I specialized in software engineering and since then, I've been focused on the exciting world of web development. I am constantly exploring new technologies, with the goal of growing and evolving as a professional day by day. Welcome to my portfolio.</p>
   <WorkingExperiences />
   <Studies />
   <TechStack />

@@ -4,29 +4,37 @@ import WorkCard from "./WorkCard.astro"
 const cardInfo = [
   {
     title: "Calculator App",
-    description: "Simple calculator app made with React."
+    description: "Simple calculator app made with React.",
+    repoLink: "https://github.com/carlosexojogavilan/CalculatorApp",
+    demoLink: "#"
   },
   {
     title: "Higher or Lower Game",
-    description: "Based in the famous game using React and RapidApi."
+    description: "Based in the famous game using React and RapidApi.",
+    repoLink: "https://github.com/carlosexojogavilan/HigherOrLowerMovieGame",
+    demoLink: "https://higher-or-lower-movie-game.vercel.app/"
   },
   {
     title: "Job Finder App",
-    description: "React Native app where you can find jobs via keywords."
+    description: "React Native app where you can find jobs via keywords.",
+    repoLink: "https://github.com/carlosexojogavilan/react-native-demo-app",
+    demoLink: "#"
   },
   {
     title: "Personal portfolio",
-    description: "Web made using Astro as the main technology."
+    description: "Web made using Astro as the main technology.",
+    repoLink: "https://github.com/carlosexojogavilan/web-portfolio",
+    demoLink: "#"
   }
 ]
 ---
 
-<section class="p-20 bg-[#00264B] scroll-mt-20" id="work">
-  <h2 class="inline text-white text-2xl font-bold tracking-tighter">My Work</h2>
-  <p class="inline text-3xl text-primary font-bold">.</p>
+<section id="work" class="section bg-bgDarkSecondary">
+  <h2 class="sectionTitle">My Work</h2>
+  <p class="accent text-3xl">.</p>
   <div class="flex flex-wrap gap-12 mt-12 justify-center">
     {cardInfo.map(card => {
-      return <WorkCard cardTitle={card.title} description={card.description} />
+      return <WorkCard cardTitle={card.title} description={card.description} repoLink={card.repoLink} demoLink={card.demoLink}/>
     })}
   </div>
 </section>

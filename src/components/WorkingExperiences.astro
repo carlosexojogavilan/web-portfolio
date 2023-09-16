@@ -1,11 +1,25 @@
 ---
 import AboutWorkCard from "./AboutWorkCard.astro"
+
+const workingExperiencesInfo = [
+  {
+    jobRole: "Front-End Developer",
+    company: "Capgemini",
+    period: "February 2023 - July 2023",
+    description: "In my role as a Front-End Developer, I have had the opportunity to craft engaging and responsive user interfaces that elevate the digital presence of various projects. I am well-versed in HTML, CSS, JavaScript, and various front-end frameworks, such as React or Astro, which I've utilized to create visually appealing websites and web applications. I have a keen eye for design aesthetics, ensuring that user experiences are not only visually pleasing but also intuitive and user-friendly. "
+  },
+  {
+    jobRole: "Salesforce Developer",
+    company: "Konozca Consulting",
+    period: "Sept 2022 - February 2023",
+    description: "As a Salesforce Developer, I have successfully designed, developed, and implemented tailored solutions within the Salesforce ecosystem. My work has included customizing Salesforce applications to align with clients' specific business needs, automating workflows, creating data-driven dashboards and reports, and integrating third-party applications for enhanced functionality."
+  }
+]
 ---
 
-<div class="flex flex-col gap-3">
-  <h3 class="text-xl text-white font-bold tracking-tighter mt-8">Working Experience:</h3>
-  <div class="flex flex-col gap-4">
-    <AboutWorkCard jobRole="Front-End Developer" company="Capgemini" period="February 2023 - July 2023" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, placeat earum. Praesentium minus aut aperiam ipsam consequatur harum facilis cumque, quo beatae est. Ut, culpa provident? Veritatis ea sint eos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, neque perferendis possimus ullam minus ad vitae ipsam, facere sint voluptates error distinctio assumenda animi excepturi consectetur est non ipsa magnam." />
-    <AboutWorkCard jobRole="Salesforce Developer" company="Konozca Consulting" period="Sept 2022 - February 2023" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, placeat earum. Praesentium minus aut aperiam ipsam consequatur harum facilis cumque, quo beatae est. Ut, culpa provident? Veritatis ea sint eos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, neque perferendis possimus ullam minus ad vitae ipsam, facere sint voluptates error distinctio assumenda animi excepturi consectetur est non ipsa magnam." />
-  </div>
+<div class="flex flex-col gap-4 mt-8">
+  <h3 class="text-xl text-white font-bold tracking-tighter">Working Experience:</h3>
+  {workingExperiencesInfo.map(experience => {
+    return <AboutWorkCard jobRole={experience.jobRole} company={experience.company} period={experience.period} description={experience.description} />
+  })}
 </div>

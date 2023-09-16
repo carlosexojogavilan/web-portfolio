@@ -1,41 +1,48 @@
-<div class="flex flex-col gap-4">
-  <h3 class="text-xl text-white font-bold tracking-tighter mt-8">Tech Stack</h3>
-  <div class="flex flex-wrap gap-6">
-    <div class="flex flex-col items-center justify-center gap-1 text-white">
-      <img src="../../src/assets/images/html-5-svgrepo-com.svg" class="w-16 h-16 select-none">
-      <p class="text-center">HTML</p>
-    </div>
-    <div class="flex flex-col items-center justify-center gap-1 text-white">
-      <img src="../../src/assets/images/css-3-svgrepo-com.svg" class="w-16 h-16 select-none">
-      <p class="text-center">CSS</p>
-    </div>
-    <div class="flex flex-col items-center justify-center gap-1 text-white">
-      <img src="../../src/assets/images/tailwind-svgrepo-com.svg" class="w-16 h-16 select-none">
-      <p class="text-center">Tailwind</p>
-    </div>
-    <div class="flex flex-col items-center justify-center gap-1 text-white">
-      <img src="../../src/assets/images/sass-svgrepo-com.svg" class="w-16 h-16 select-none">
-      <p class="text-center">Sass</p>
-    </div>
-    <div class="flex flex-col items-center justify-center gap-1 text-white">
-      <img src="../../src/assets/images/js-svgrepo-com.svg" class="w-16 h-16 select-none">
-      <p class="text-center">JavaScript</p>
-    </div>
-    <div class="flex flex-col items-center justify-center gap-1 text-white">
-      <img src="../../src/assets/images/react-svgrepo-com.svg" class="w-16 h-16 select-none">
-      <p class="text-center">React</p>
-    </div>
-    <div class="flex flex-col items-center justify-center gap-1 text-white">
-      <img src="../../src/assets/images/astro-svgrepo-com.svg" class="w-16 h-16 select-none">
-      <p class="text-center">Astro</p>
-    </div>
-    <div class="flex flex-col items-center justify-center gap-1 text-white">
-      <img src="../../src/assets/images/git-svgrepo-com.svg" class="w-16 h-16 select-none">
-      <p class="text-center">Git</p>
-    </div>
-    <div class="flex flex-col items-center justify-center gap-1 text-white">
-      <img src="../../src/assets/images/jest-snapshot-svgrepo-com.svg" class="w-16 h-16 select-none">
-      <p class="text-center">Jest</p>
-    </div>
-  </div>
+---
+import TechStackItem from "./TechStackItem.astro";
+const technologies = [
+  {
+    fileName: "html-5-svgrepo-com.svg",
+    techName: "HTML"
+  },
+  {
+    fileName: "css-3-svgrepo-com.svg",
+    techName: "CSS"
+  },
+  {
+    fileName: "tailwind-svgrepo-com.svg",
+    techName: "Tailwind"
+  },
+  {
+    fileName: "sass-svgrepo-com.svg",
+    techName: "Sass"
+  },
+  {
+    fileName: "js-svgrepo-com.svg",
+    techName: "JavaScript"
+  },
+  {
+    fileName: "react-svgrepo-com.svg",
+    techName: "React"
+  },
+  {
+    fileName: "astro-svgrepo-com.svg",
+    techName: "Astro"
+  },
+  {
+    fileName: "git-svgrepo-com.svg",
+    techName: "Git"
+  },
+  {
+    fileName: "jest-snapshot-svgrepo-com.svg",
+    techName: "Jest"
+  }
+]
+---
+
+<h3 class="mt-8 mb-4 text-xl text-white font-bold tracking-tighter">Tech Stack:</h3>
+<div class="flex flex-wrap gap-6">
+  {technologies.map(technology => {
+    return <TechStackItem fileName={technology.fileName} techName={technology.techName} />
+  })}
 </div>

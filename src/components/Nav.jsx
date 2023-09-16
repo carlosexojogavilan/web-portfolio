@@ -10,18 +10,27 @@ const navItems = [
 ];
 
 const Nav = (props) => {
-  const [hamburgerOpen, setHamburgerOpen] = useState(false);
+  const [hamburgerOpen, setHamburgerOpen] = useState(null); // Initialize to null
 
   const toggleHamburger = () => {
-    setHamburgerOpen(!hamburgerOpen);
+    setHamburgerOpen(hamburgerOpen === null ? true : !hamburgerOpen);
   };
 
   const OpenedHamburgerMenu = () => {
     return (
-      <div className="fixed w-full h-screen flex flex-col top-0 left-0  bg-bgDark">
+      <div
+        className={`fixed w-full h-screen flex flex-col top-0 left-0 bg-bgDark 
+        ${hamburgerOpen !== true ? "translate-x-full" : ""} ${
+          hamburgerOpen === true
+            ? "translate-x-0 animate-menuSlideIn"
+            : hamburgerOpen === false
+            ? "translate-x-full animate-menuSlideOut"
+            : "" // No animation class on initial load (null state)
+        }`}
+      >
         <div className="h-20 flex items-center self-end mr-16">
           <button onClick={toggleHamburger}>
-            <img src="../../src/assets/icons/close-icon.svg"></img>
+            <img src="../../src/assets/icons/close-icon.svg" alt="Close" />
           </button>
         </div>
         <ul className="flex-auto flex flex-col justify-center items-center gap-4 text-white text-2xl font-semibold">
@@ -56,7 +65,7 @@ const Nav = (props) => {
       <div className="md:hidden" onClick={toggleHamburger}>
         {props.hamburgerMenu}
       </div>
-      {hamburgerOpen && <OpenedHamburgerMenu />}
+      <OpenedHamburgerMenu />
     </>
   );
 };

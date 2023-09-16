@@ -8,8 +8,23 @@ module.exports = {
       },
       colors: {
         primary: "#FFD60A",
+        secondary: "#FFC300",
         bgDark: "#00172F",
-        bgDarkSeconday: "#00264B",
+        bgDarkSecondary: "#00264B",
+      },
+      keyframes: {
+        menuSlideIn: {
+          "0%": { transform: "translateX(200%)" },
+          "100%": { transform: "translateX(0)" },
+        },
+        menuSlideOut: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(200%)" },
+        },
+      },
+      animation: {
+        menuSlideIn: "menuSlideIn 0.6s ease-out",
+        menuSlideOut: "menuSlideOut 0.6s ease-in",
       },
     },
   },

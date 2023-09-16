@@ -82,10 +82,40 @@
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#000814", endColorstr="#001D3D", GradientType=1 );
 }
 
+@keyframes Animation {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.background-animate {
+  background-size: 400%;
+
+  -webkit-animation: Animation 3s ease infinite;
+  -moz-animation: Animation 3s ease infinite;
+  animation: Animation 3s ease infinite;
+}
+
+.section {
+  @apply p-10 md:p-20 scroll-mt-20;
+}
+
 .title {
   @apply inline text-white text-xl md:text-2xl tracking-tighter;
 }
 
+.sectionTitle {
+  @apply inline text-white text-2xl font-bold tracking-tighter;
+}
+
 .accent {
   @apply inline text-primary font-bold;
+}
+
+.btn {
+  @apply px-4 py-2 rounded-xl border-2 border-secondary;
 }
