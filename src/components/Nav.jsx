@@ -10,7 +10,7 @@ const navItems = [
 ];
 
 const Nav = (props) => {
-  const [hamburgerOpen, setHamburgerOpen] = useState(null); // Initialize to null
+  const [hamburgerOpen, setHamburgerOpen] = useState(null);
 
   const toggleHamburger = () => {
     setHamburgerOpen(hamburgerOpen === null ? true : !hamburgerOpen);
@@ -25,7 +25,7 @@ const Nav = (props) => {
             ? "translate-x-0 animate-menuSlideIn"
             : hamburgerOpen === false
             ? "translate-x-full animate-menuSlideOut"
-            : "" // No animation class on initial load (null state)
+            : ""
         }`}
       >
         <div className="h-20 flex items-center self-end mr-16">
