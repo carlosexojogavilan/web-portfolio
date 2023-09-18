@@ -6,7 +6,7 @@ const navItems = [
   { name: "Home", id: "home" },
   { name: "About", id: "about" },
   { name: "Work", id: "work" },
-  { name: "Contant", id: "contact" },
+  { name: "Contact", id: "contact" },
 ];
 
 const Nav = (props) => {
