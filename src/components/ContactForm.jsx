@@ -1,82 +1,126 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 
 const ContactForm = () => {
-  const form = useRef();
+  const [successfullForm, setSuccesfullForm] = useState(false);
 
-  const checkErrors = () => {
-    const name = form.current.from_name.value.trim();
-    const email = form.current.from_email.value.trim();
-    const message = form.current.message.value.trim();
-
-    if (!name || !email || !message) {
-      setIsFormValid(false);
-      return false;
+  const checkErrors = (values) => {
+    let errors = {};
+    if (!values.from_name) {
+      errors.from_name = "Please enter a name";
     }
-    return true;
+
+    if (!values.from_email) {
+      errors.from_email = "Please enter a email";
+    } else if (
+      !/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(
+        values.from_email
+      )
+    ) {
+      errors.from_email = "Please enter a valid email";
+    }
+
+    if (!values.message) {
+      errors.message = "Please enter a message";
+    }
+
+    return errors;
   };
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+  const sendEmail = (values, { resetForm }) => {
+    resetForm();
+    setSuccesfullForm(true);
+    setTimeout(() => {
+      setSuccesfullForm(false);
+    }, 3000);
 
-    const isFormValid = checkErrors();
-
-    if (isFormValid) {
-      emailjs
-        .sendForm(
-          "service_sh08jlm",
-          "template_2v1d89x",
-          form.current,
-          "3gg23xKscxJolDgyX"
-        )
-        .then(
-          (result) => {
-            console.log(result.text);
-          },
-          (error) => {
-            console.log(error.text);
-          }
-        );
-    } else {
-    }
+    emailjs
+      .send("service_sh08jlm", "template_2v1d89x", values, "3gg23xKscxJolDgyX")
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
 
   return (
-    <form
-      ref={form}
+    <Formik
+      initialValues={{ from_name: "", from_email: "", message: "" }}
+      validate={checkErrors}
       onSubmit={sendEmail}
-      className="bg-[#00264B] p-8 mt-10 rounded-xl border-[1px] border-primary flex-auto"
     >
-      <div className="flex flex-col gap-2">
-        <label htmlFor="name" className="text-gray-200 font-bold text-lg">
-          Name:
-        </label>
-        <input
-          id="name"
-          className="bg-[#00172F] px-4 py-2 rounded-xl text-white caret-primary"
-          placeholder="Name"
-          name="from_name"
-        ></input>
-      </div>
-      <div className="flex flex-col gap-2 mt-6">
-        <label className="text-gray-200 font-bold text-lg">Email:</label>
-        <input
-          className="bg-[#00172F] px-4 py-2 rounded-xl text-white caret-primary"
-          placeholder="johndoe@gmail.com"
-          type="Email"
-          name="from_email"
-        ></input>
-      </div>
-      <div className="flex flex-col gap-2 mt-6">
-        <label className="text-gray-200 font-bold text-lg">Message:</label>
-        <textarea
-          className="bg-[#00172F] px-4 py-2 rounded-xl h-40 overflow-y-auto text-white caret-primary"
-          placeholder="Message"
-          name="message"
-        ></textarea>
-      </div>
-      <button className="btn w-full mt-4 font-medium bg-primary">Send</button>
-    </form>
+      {({ errors }) => (
+        <Form className="bg-[#00264B] p-8 mt-10 rounded-xl border-[1px] border-primary flex-auto">
+          <div className="flex flex-col gap-2">
+            <label htmlFor="name" className="text-gray-200 font-bold text-lg">
+              Name:
+            </label>
+            <Field
+              id="from_name"
+              className="bg-[#00172F] px-4 py-2 rounded-xl text-white caret-primary"
+              placeholder="Name"
+              name="from_name"
+            />
+            <ErrorMessage
+              name="from_name"
+              component={() => (
+                <p className="text-sm text-red-600 font-medium py-1">
+                  {errors.from_name}
+                </p>
+              )}
+            />
+          </div>
+          <div className="flex flex-col gap-2 mt-6">
+            <label className="text-gray-200 font-bold text-lg">Email:</label>
+            <Field
+              className="bg-[#00172F] px-4 py-2 rounded-xl text-white caret-primary"
+              placeholder="johndoe@gmail.com"
+              name="from_email"
+            />
+            <ErrorMessage
+              name="from_email"
+              component={() => (
+                <p className="text-sm text-red-600 font-medium py-1">
+                  {errors.from_email}
+                </p>
+              )}
+            />
+          </div>
+          <div className="flex flex-col gap-2 mt-6">
+            <label className="text-gray-200 font-bold text-lg">Message:</label>
+            <Field
+              as="textarea"
+              className="bg-[#00172F] px-4 py-2 rounded-xl h-40 overflow-y-auto text-white caret-primary"
+              placeholder="Message"
+              name="message"
+            />
+            <ErrorMessage
+              name="message"
+              component={() => (
+                <p className="text-sm text-red-600 font-medium py-1">
+                  {errors.message}
+                </p>
+              )}
+            />
+          </div>
+          <button
+            type="submit"
+            className="btn w-full mt-4 font-medium bg-primary"
+          >
+            Send
+          </button>
+          {successfullForm && (
+            <p className="w-full text-center mt-4 font-medium text-green-500">
+              Form sent successfully!
+            </p>
+          )}
+        </Form>
+      )}
+    </Formik>
   );
 };
 

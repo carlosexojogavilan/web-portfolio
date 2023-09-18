@@ -19,7 +19,7 @@ const Nav = (props) => {
   const OpenedHamburgerMenu = () => {
     return (
       <div
-        className={`fixed w-full h-screen flex flex-col top-0 left-0 bg-bgDark 
+        className={`absolute w-full h-screen flex flex-col top-0 left-0 bg-bgDark
         ${hamburgerOpen !== true ? "translate-x-full" : ""} ${
           hamburgerOpen === true
             ? "translate-x-0 animate-menuSlideIn"
