@@ -30,7 +30,7 @@ const Nav = (props) => {
       >
         <div className="h-20 flex items-center self-end mr-16">
           <button onClick={toggleHamburger}>
-            <img src="../../src/assets/icons/close-icon.svg" alt="Close" />
+            <img src="./assets/icons/close-icon.svg" alt="Close" />
           </button>
         </div>
         <ul className="flex-auto flex flex-col justify-center items-center gap-4 text-white text-2xl font-semibold">

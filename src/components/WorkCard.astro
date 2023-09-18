@@ -3,7 +3,7 @@ const {cardTitle, description, repoLink, demoLink} = Astro.props;
 ---
 
 <div class="border-[1px] border-primary rounded-xl overflow-hidden max-w-xs bg-[#001F3D]">
-  <img src="../../src/assets/images/roberto-nickson-hLgYtX0rPgw-unsplash.jpg" class="object-cover h-60 w-80">
+  <img src="./assets/images/roberto-nickson-hLgYtX0rPgw-unsplash.jpg" class="object-cover h-60 w-80">
   <div class="p-5 flex flex-col gap-5 border-t border-primary">
     <div class="flex flex-col gap-1">
       <h3 class="text-primary text-2xl font-bold tracking-tight">{cardTitle}</h3>
@@ -12,11 +12,11 @@ const {cardTitle, description, repoLink, demoLink} = Astro.props;
     <div class="flex gap-4 font-medium">
       <a href={repoLink} target="_blank" rel="no-opener" class="btn bg-primary font-light flex items-center gap-2 cursor-pointer">
         Repo
-        <img src="../../src/assets/icons/github-icon.svg">
+        <img src="./assets/icons/github-icon.svg">
       </a>
       <a href={demoLink} target="_blank" rel="no-opener" class="btn bg-primary font-light flex items-center gap-2 cursor-pointer">
         Demo
-        <img src="../../src/assets/icons/redirect-icon.svg">
+        <img src="./assets/icons/redirect-icon.svg">
       </a>
     </div>
   </div>
