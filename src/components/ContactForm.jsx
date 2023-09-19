@@ -3,7 +3,7 @@ import emailjs from "@emailjs/browser";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
 const ContactForm = () => {
-  const [successfullForm, setSuccesfullForm] = useState(false);
+  const [successfullForm, setSuccesfullForm] = useState(null);
 
   const checkErrors = (values) => {
     let errors = {};
@@ -43,7 +43,7 @@ const ContactForm = () => {
           setSuccesfullForm(true);
           setTimeout(() => {
             setSuccesfullForm(null);
-          }, 3000);
+          }, 5000);
         },
         (error) => {
           console.log(error.text);
@@ -51,7 +51,7 @@ const ContactForm = () => {
           setSuccesfullForm(false);
           setTimeout(() => {
             setSuccesfullForm(null);
-          }, 3000);
+          }, 5000);
         }
       );
   };

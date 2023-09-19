@@ -23,8 +23,8 @@ module.exports = {
         },
       },
       animation: {
-        menuSlideIn: "menuSlideIn 0.6s ease-out",
-        menuSlideOut: "menuSlideOut 0.6s ease-in",
+        menuSlideIn: "menuSlideIn 0.5s ease-out",
+        menuSlideOut: "menuSlideOut 0.5s ease-in",
       },
     },
   },

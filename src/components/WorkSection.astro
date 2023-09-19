@@ -3,28 +3,32 @@ import WorkCard from "./WorkCard.astro"
 
 const cardInfo = [
   {
+    image:"calculator_app_image.PNG",
     title: "Calculator App",
     description: "Simple calculator app made with React.",
     repoLink: "https://github.com/carlosexojogavilan/CalculatorApp",
-    demoLink: "#"
+    demoLink: ""
   },
   {
+    image:"higher_or_lower_image.PNG",
     title: "Higher or Lower Game",
     description: "Based in the famous game using React and RapidApi.",
     repoLink: "https://github.com/carlosexojogavilan/HigherOrLowerMovieGame",
     demoLink: "https://higher-or-lower-movie-game.vercel.app/"
   },
   {
+    image:"roberto-nickson-hLgYtX0rPgw-unsplash.jpg",
     title: "Job Finder App",
     description: "React Native app where you can find jobs via keywords.",
     repoLink: "https://github.com/carlosexojogavilan/react-native-demo-app",
-    demoLink: "#"
+    demoLink: ""
   },
   {
+    image:"web_portfolio_image.PNG",
     title: "Personal portfolio",
     description: "Web made using Astro as the main technology.",
     repoLink: "https://github.com/carlosexojogavilan/web-portfolio",
-    demoLink: "#"
+    demoLink: "https://carlos-exojo.vercel.app/"
   }
 ]
 ---
@@ -34,7 +38,7 @@ const cardInfo = [
   <p class="accent text-3xl">.</p>
   <div class="flex flex-wrap gap-12 mt-12 justify-center">
     {cardInfo.map(card => {
-      return <WorkCard cardTitle={card.title} description={card.description} repoLink={card.repoLink} demoLink={card.demoLink}/>
+      return <WorkCard cardImage={card.image} cardTitle={card.title} description={card.description} repoLink={card.repoLink} demoLink={card.demoLink}/>
     })}
   </div>
 </section>

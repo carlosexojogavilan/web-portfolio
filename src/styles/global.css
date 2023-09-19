@@ -109,11 +109,11 @@
 }
 
 .sectionTitle {
-  @apply inline text-white text-2xl font-bold tracking-tighter;
+  @apply inline text-white text-2xl font-bold tracking-tighter ml-auto;
 }
 
 .accent {
-  @apply inline text-primary font-bold;
+  @apply inline text-primary font-bold mr-auto;
 }
 
 .btn {
