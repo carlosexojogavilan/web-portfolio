@@ -3,7 +3,7 @@ import emailjs from "@emailjs/browser";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
 const ContactForm = () => {
-  const [successfullForm, setSuccesfullForm] = useState(false);
+  const [successfullForm, setSuccesfullForm] = useState(null);
 
   const checkErrors = (values) => {
     let errors = {};
@@ -30,19 +30,28 @@ const ContactForm = () => {
 
   const sendEmail = (values, { resetForm }) => {
     resetForm();
-    setSuccesfullForm(true);
-    setTimeout(() => {
-      setSuccesfullForm(false);
-    }, 3000);
 
     emailjs
-      .send("service_sh08jlm", "template_2v1d89x", values, "3gg23xKscxJolDgyX")
+      .send(
+        "service_sh08jlm",
+        "template_2v1d89x",
+        values,
+        process.env.EMAILJS_KEY
+      )
       .then(
         (result) => {
-          console.log(result.text);
+          setSuccesfullForm(true);
+          setTimeout(() => {
+            setSuccesfullForm(null);
+          }, 3000);
         },
         (error) => {
           console.log(error.text);
+          console.log("Hola");
+          setSuccesfullForm(false);
+          setTimeout(() => {
+            setSuccesfullForm(null);
+          }, 3000);
         }
       );
   };
@@ -113,10 +122,16 @@ const ContactForm = () => {
           >
             Send
           </button>
-          {successfullForm && (
+          {successfullForm ? (
             <p className="w-full text-center mt-4 font-medium text-green-500">
               Form sent successfully!
             </p>
+          ) : successfullForm === false ? (
+            <p className="w-full text-center mt-4 font-medium text-red-500">
+              There was an error!
+            </p>
+          ) : (
+            ""
           )}
         </Form>
       )}
