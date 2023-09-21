@@ -9,7 +9,7 @@ const navItems = [
   { name: "Contact", id: "contact" },
 ];
 
-const Nav = (props) => {
+const Nav = ({ hamburgerMenu, themeToggler }) => {
   const [hamburgerOpen, setHamburgerOpen] = useState(null);
 
   const toggleHamburger = () => {
@@ -50,7 +50,7 @@ const Nav = (props) => {
 
   return (
     <>
-      <div className={`hidden md:block`}>
+      <div className={`hidden md:flex md:gap-8`}>
         <ul className="flex gap-4">
           {navItems.map((navItem, index) => (
             <NavItem
@@ -61,9 +61,10 @@ const Nav = (props) => {
             />
           ))}
         </ul>
+        {themeToggler}
       </div>
       <div className="md:hidden" onClick={toggleHamburger}>
-        {props.hamburgerMenu}
+        {hamburgerMenu}
       </div>
       <OpenedHamburgerMenu />
     </>

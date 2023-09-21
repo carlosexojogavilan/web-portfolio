@@ -1,6 +1,7 @@
 ---
 import HamburgerMenu from "./HamburgerMenu.astro";
 import Nav from "./Nav.jsx";
+import ThemeToggler from "./ThemeToggler.astro";
 ---
 
 <header class="fixed z-10 w-full h-20 flex justify-between items-center px-20 border-b border-b-primary backdrop-blur">
@@ -11,5 +12,6 @@ import Nav from "./Nav.jsx";
   </div>
   <Nav client:visible>
     <HamburgerMenu  slot="hamburger-menu" />
+    <ThemeToggler slot="theme-toggler" />
   </Nav>
 </header>

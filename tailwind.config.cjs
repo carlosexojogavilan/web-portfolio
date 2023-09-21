@@ -11,6 +11,7 @@ module.exports = {
         secondary: "#FFC300",
         bgDark: "#00172F",
         bgDarkSecondary: "#00264B",
+        bgLight: "#DCEAFF",
       },
       keyframes: {
         menuSlideIn: {
@@ -28,5 +29,6 @@ module.exports = {
       },
     },
   },
+  darkMode: "class",
   plugins: [require("tailwindcss-animated")],
 };
