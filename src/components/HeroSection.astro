@@ -1,5 +1,5 @@
 <section
-  class="h-screen flex flex-col justify-center items-center gap-8 bg-hero-dark"
+  class="h-screen flex flex-col justify-center items-center gap-8"
   id="home"
 >
   <img
@@ -8,24 +8,47 @@
     alt="My personal photo"
   ></img>
   <div class="text-center">
-    <p class="text-white text-xl md:text-2xl xl:text-3xl">
+    <p class="text-black dark:text-white text-xl md:text-2xl xl:text-3xl">
       Hi, I'm Carlos 👋
     </p>
-    <h2 class="text-2xl scale-110 sm:scale-100 sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-[#FF9800] md:text-4xl xl:text-5xl tracking-tighter background-animate">
+    <h2 class="text-2xl scale-110 sm:scale-100 sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary md:text-4xl xl:text-5xl tracking-tighter background-animate">
       Front-End Developer
     </h2>
-    <p class="text-white text-xl md:text-2xl xl:text-3xl">
+    <p class="text-black dark:text-white text-xl md:text-2xl xl:text-3xl">
       Welcome to my web portfolio
     </p>
     <div class="mt-4 flex gap-4 justify-between md:justify-center">
-      <a href="./assets/CV_CarlosExojo.pdf" target="_blank" rel="no-opener" class="btn text-white font-light flex items-center gap-2">
+      <a href="./assets/CV_CarlosExojo.pdf" target="_blank" rel="no-opener" class="btn text-black dark:text-white font-light flex items-center gap-2">
         Resume
         <img src="./assets/icons/cv-icon.svg" alt="CV icon"></img>
       </a>
-      <a href="#work" class="btn text-white font-light flex items-center gap-2 bg-gradient-to-r from-primary to-[#FF9800]">
+      <a href="#work" class="btn text-black dark:text-white font-light flex items-center gap-2 bg-gradient-to-r from-primary to-secondary">
         Portfolio
         <img src="./assets/icons/right-arrow-icon.svg" alt="right arrow icon"></img>
       </a>
     </div>
   </div>
 </section>
+
+<script is:inline>
+  const heroSection = document.getElementById("home");
+  const themeToggler = document.getElementById("themeToggle");
+
+  console.log(heroSection, themeToggler);
+  
+  function changeBackground() {
+    const isDarkMode = document.documentElement.classList.contains("dark");
+    if(isDarkMode) {
+      heroSection.classList.remove("bg-hero-light");
+      heroSection.classList.add("bg-hero-dark");
+    }
+    else {
+      heroSection.classList.remove("bg-hero-dark");
+      heroSection.classList.add("bg-hero-light");
+    }
+  }
+  
+  changeBackground();
+
+  themeToggler.addEventListener('click', changeBackground);
+</script>

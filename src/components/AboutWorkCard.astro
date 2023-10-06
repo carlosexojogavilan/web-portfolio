@@ -2,11 +2,11 @@
 const {jobRole, company, period, description} = Astro.props;
 ---
 
-<div class="px-8 py-4 text-lg text-gray-200 border-primary border rounded-xl bg-bgDarkSecondary">
+<div class="px-8 py-4 text-lg text-gray-800 dark:text-gray-200 border-primary border rounded-xl bg-bgLightSecondary dark:bg-bgDarkSecondary">
   <p class="underline underline-offset-2 decoration-primary">{jobRole}</p>
-  <div class="text-sm italic text-gray-400">
+  <div class="text-sm italic text-gray-600 dark:text-gray-400">
     <p>{company}</p>
     <p>{period}</p>
   </div>
-  <p class="hidden md:block text-lg text-gray-200 my-4">{description}</p>
+  <p class="hidden md:block text-lg text-gray-800 dark:text-gray-200 my-4">{description}</p>
 </div>

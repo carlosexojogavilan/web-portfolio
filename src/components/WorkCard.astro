@@ -2,19 +2,19 @@
 const {cardImage, cardTitle, description, repoLink, demoLink} = Astro.props;
 ---
 
-<div class="border-[1px] border-primary rounded-xl overflow-hidden max-w-xs bg-[#001F3D]">
+<div class="border-[1px] border-primary rounded-xl overflow-hidden max-w-xs bg-bgLight dark:bg-[#001F3D]">
   <img src={`./assets/images/${cardImage}`} class="object-cover h-60 w-80" alt="project image">
   <div class="p-5 flex flex-col gap-5 border-t border-primary">
     <div class="flex flex-col gap-1">
       <h3 class="text-primary text-2xl font-bold tracking-tight">{cardTitle}</h3>
-      <p class="text-gray-200">{description}</p>
+      <p class="text-gray-800 dark:text-gray-200">{description}</p>
     </div>
     <div class="flex gap-4 font-medium">
-      <a href={repoLink} target="_blank" rel="no-opener" class="btn bg-primary font-light flex items-center gap-2 cursor-pointer">
+      <a href={repoLink} target="_blank" rel="no-opener" class="btn bg-primary font-light flex items-center gap-2 cursor-pointer text-white">
         Repo
         <img src="./assets/icons/github-icon.svg" alt="Github icon">
       </a>
-      <a href={demoLink} target="_blank" rel="no-opener" class={`btn bg-primary font-light flex items-center gap-2 cursor-pointer ${!demoLink && "bg-opacity-60 border-opacity-60 pointer-events-none"}`} >
+      <a href={demoLink} target="_blank" rel="no-opener" class={`btn bg-primary font-light flex items-center gap-2 cursor-pointer text-white ${!demoLink && "bg-opacity-60 border-opacity-60 pointer-events-none"}`} >
         Demo
         <img src="./assets/icons/redirect-icon.svg" alt="redirect to icon">
       </a>

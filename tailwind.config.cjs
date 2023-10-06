@@ -7,11 +7,12 @@ module.exports = {
         sans: ["WorkSans", "sans-serif"],
       },
       colors: {
-        primary: "#FFD60A",
-        secondary: "#FFC300",
+        primary: "#0A6CFF",
+        secondary: "#5096FF",
         bgDark: "#00172F",
         bgDarkSecondary: "#00264B",
-        bgLight: "#DCEAFF",
+        bgLight: "#B9D5FF",
+        bgLightSecondary: "#DCEAFF",
       },
       keyframes: {
         menuSlideIn: {

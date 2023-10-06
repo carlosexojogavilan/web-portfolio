@@ -19,7 +19,7 @@ const Nav = ({ hamburgerMenu, themeToggler }) => {
   const OpenedHamburgerMenu = () => {
     return (
       <div
-        className={`absolute w-full h-screen flex flex-col top-0 left-0 bg-bgDark
+        className={`absolute w-full h-screen flex flex-col top-0 left-0 bg-bgLight dark:bg-bgDark
         ${hamburgerOpen !== true ? "translate-x-full" : ""} ${
           hamburgerOpen === true
             ? "translate-x-0 animate-menuSlideIn"
@@ -33,7 +33,7 @@ const Nav = ({ hamburgerMenu, themeToggler }) => {
             <img src="./assets/icons/close-icon.svg" alt="Close" />
           </button>
         </div>
-        <ul className="flex-auto flex flex-col justify-center items-center gap-4 text-white text-2xl font-semibold">
+        <ul className="flex-auto flex flex-col justify-center items-center gap-4 text-black dark:text-white text-2xl font-semibold">
           {navItems.map((navItem, index) => (
             <NavItem
               name={navItem.name}
@@ -61,11 +61,11 @@ const Nav = ({ hamburgerMenu, themeToggler }) => {
             />
           ))}
         </ul>
-        {themeToggler}
       </div>
       <div className="md:hidden" onClick={toggleHamburger}>
         {hamburgerMenu}
       </div>
+      {themeToggler}
       <OpenedHamburgerMenu />
     </>
   );

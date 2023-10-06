@@ -2,7 +2,7 @@
 const {fileName, techName} = Astro.props
 ---
 
-<div class="flex flex-col items-center justify-center gap-1 text-white">
+<div class="flex flex-col items-center justify-center gap-1 text-black dark:text-white">
   <img src={`./assets/images/${fileName}`} class="w-16 h-16 select-none" alt="Tech image">
   <p class="text-center">{techName}</p>
 </div>

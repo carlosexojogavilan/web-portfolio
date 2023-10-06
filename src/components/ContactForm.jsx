@@ -63,14 +63,17 @@ const ContactForm = () => {
       onSubmit={sendEmail}
     >
       {({ errors }) => (
-        <Form className="bg-[#00264B] p-8 mt-10 rounded-xl border-[1px] border-primary flex-auto">
+        <Form className="bg-bgLightSecondary dark:bg-[#00264B] p-8 mt-10 rounded-xl border-[1px] border-primary flex-auto">
           <div className="flex flex-col gap-2">
-            <label htmlFor="name" className="text-gray-200 font-bold text-lg">
+            <label
+              htmlFor="name"
+              className="text-gray-800 dark:text-gray-200 font-bold text-lg"
+            >
               Name:
             </label>
             <Field
               id="from_name"
-              className="bg-[#00172F] px-4 py-2 rounded-xl text-white caret-primary"
+              className="bg-bgLight dark:bg-[#00172F] px-4 py-2 rounded-xl text-black dark:text-white caret-primary"
               placeholder="Name"
               name="from_name"
             />
@@ -84,9 +87,11 @@ const ContactForm = () => {
             />
           </div>
           <div className="flex flex-col gap-2 mt-6">
-            <label className="text-gray-200 font-bold text-lg">Email:</label>
+            <label className="text-gray-800 dark:text-gray-200 font-bold text-lg">
+              Email:
+            </label>
             <Field
-              className="bg-[#00172F] px-4 py-2 rounded-xl text-white caret-primary"
+              className="bg-bgLight dark:bg-[#00172F] px-4 py-2 rounded-xl text-black dark:text-white caret-primary"
               placeholder="johndoe@gmail.com"
               name="from_email"
             />
@@ -100,10 +105,12 @@ const ContactForm = () => {
             />
           </div>
           <div className="flex flex-col gap-2 mt-6">
-            <label className="text-gray-200 font-bold text-lg">Message:</label>
+            <label className="text-gray-800 dark:text-gray-200 font-bold text-lg">
+              Message:
+            </label>
             <Field
               as="textarea"
-              className="bg-[#00172F] px-4 py-2 rounded-xl h-40 overflow-y-auto text-white caret-primary"
+              className="bg-bgLight dark:bg-[#00172F] px-4 py-2 rounded-xl h-40 overflow-y-auto text-black dark:text-white caret-primary"
               placeholder="Message"
               name="message"
             />
@@ -118,7 +125,7 @@ const ContactForm = () => {
           </div>
           <button
             type="submit"
-            className="btn w-full mt-4 font-medium bg-primary"
+            className="btn w-full mt-4 font-medium text-white bg-primary"
           >
             Send
           </button>

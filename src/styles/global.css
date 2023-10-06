@@ -82,6 +82,30 @@
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#000814", endColorstr="#001D3D", GradientType=1 );
 }
 
+.bg-hero-light {
+  background: hsla(216, 100%, 79%, 1);
+
+  background: linear-gradient(
+    360deg,
+    hsla(216, 100%, 79%, 1) 0%,
+    hsla(216, 100%, 86%, 1) 100%
+  );
+
+  background: -moz-linear-gradient(
+    360deg,
+    hsla(216, 100%, 79%, 1) 0%,
+    hsla(216, 100%, 86%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    360deg,
+    hsla(216, 100%, 79%, 1) 0%,
+    hsla(216, 100%, 86%, 1) 100%
+  );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#96C0FF", endColorstr="#B9D5FF", GradientType=1 );
+}
+
 @keyframes Animation {
   0%,
   100% {
@@ -105,11 +129,11 @@
 }
 
 .title {
-  @apply inline text-white text-xl md:text-2xl tracking-tighter;
+  @apply inline text-black dark:text-white text-xl md:text-2xl tracking-tighter;
 }
 
 .sectionTitle {
-  @apply inline text-white text-2xl font-bold tracking-tighter ml-auto;
+  @apply inline text-black dark:text-white text-2xl font-bold tracking-tighter ml-auto;
 }
 
 .accent {
